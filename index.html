@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Include the Vonage library via CDN -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    
+    <script  type="module" defer src="calendarView.js"></script>
+</head>
+<body>
+    <div id='calendar'></div>
+    <div class="container">
+        <span class="header-container">
+            <h1 class="arrow back blinking">&LT;</h1>
+            <div class="year-container">
+                <h1 class="year centre">2023</h1>
+                <h1 class="year left">2022</h1>
+                <h1 class="year right">2024</h1>
+            </div>
+            
+            <h1 class="arrow front blinking">&GT;</h1>
+        </span>
+        <div class="all-months">
+            
+            
+            <div class="month-container">
+                <table class="month January">
+                    <div class="month-heading"><h2>January</h2></div>
+                    <tr class="days">
+                        <td>Sun</td >
+                        <td>Mon</td>
+                        <td>Tues</td>
+                        <td>Wed</td>
+                        <td>Thur</td>
+                        <td>Fri</td>
+                        <td>Sat</td>
+                    </tr>
+                    <tr class="dates">
+                        <td class="Sun">1</td>
+                        <td class="Mon">2</td>
+                        <td class="Tues">3</td>
+                        <td class="Wed">4</td>
+                        <td class="Thur">5</td>
+                        <td class="Fri">6</td>
+                        <td class="Sat">7</td>
+                    </tr>
+                    <tr class="dates">
+                        <td class="Sun">8</td>
+                        <td class="Mon">9</td>
+                        <td class="Tues">10</td>
+                        <td class="Wed">11</td>
+                        <td class="Thur">12</td>
+                        <td class="Fri">13</td>
+                        <td class="Sat">14</td>
+                    </tr>
+        
+                    <tr class="dates">
+                        <td class="Sun">15</td>
+                        <td class="Mon">16</td>
+                        <td class="Tues">17</td>
+                        <td class="Wed">18</td>
+                        <td class="Thur">19</td>
+                        <td class="Fri">20</td>
+                        <td class="Sat">21</td>
+                    </tr>
+        
+                    <tr class="dates">
+                        <td class="Sun">22</td>
+                        <td class="Mon">23</td>
+                        <td class="Tues">24</td>
+                        <td class="Wed">25</td>
+                        <td class="Thur">26</td>
+                        <td class="Fri">27</td>
+                        <td class="Sat">28</td>
+                    </tr>
+        
+                    <tr class="dates">
+                        <td class="Sun">29</td>
+                        <td class="Mon">30</td>
+                        <td class="Tues">31</td>
+                        <td class="Wed"></td>
+                        <td class="Thur"></td>
+                        <td class="Fri"></td>
+                        <td class="Sat"></td>
+                    </tr>
+        
+        
+                </table>
+            </div>
+        </div>
+       
+            
+            
+             
+    </div>
+
+   
+
+    
+
+    <div class="box hidden">
+        <span class="span">
+            <div class="menu">&#9776;</div>
+            <div class="trash">&#x1F5D1;</div>
+            <div class="close">&times;</div>
+        </span>
+        <h2 class="date">Date: Sun, January 1, 2023</h2>
+        <p>
+            <h2 class="holiday">Holiday: New Years day</h2>
+        </p>
+        <p>
+            <h2 class="birthday">Birthday: None</h2>
+        </p>
+
+        <form class="form hidden">
+            <input type="text" value="" placeholder="enter a person's Birthday">
+
+        </form>
+    </div>
+</body>
+</html>
