@@ -1,0 +1,242 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    width: 125vw;
+    height: 230vh;
+    
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.897);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    
+}
+.box{
+    width: 300px;
+    height: 200px;
+    position: relative;
+    background-color: rgba(75, 236, 174, 0.836);
+    padding: 0.5rem;
+    text-align: left;
+    box-shadow: 0px 5px 8px;
+    font-size: 10px;
+    z-index: 1;
+    right: 45rem;
+    bottom: 20rem;
+    border-radius: 5%;
+
+}
+
+.box .form input{
+    border-radius: 2px;
+    border: 0;
+    outline: none;
+
+}
+
+@keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .blinking {
+    animation: blink 2s infinite;
+  }
+  
+
+.span {
+    margin-bottom: -15px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.span .menu , .span .trash{
+    font-size: 25px;
+    font-weight: bolder;
+
+}
+
+/* .span .trash{
+    font-size: 25px;
+    font-weight: bolder;
+} */
+
+.span .close{
+   margin-top: -15px;
+    font-size: 50px;
+}
+
+.days td{
+    padding: 0.5rem 0.5rem;
+    
+}
+.dates {
+    background-color: rgba(0, 0, 0, 0.397);
+    text-align: center;
+    cursor: pointer;
+}
+
+.month-container{
+    color: rgba(245, 245, 245, 0.664);
+    /* margin: 0.2rem; */
+    padding: 0.5rem;
+    /* flex: calc(33.33% - 100px); 
+    margin: 5px;  */
+}
+
+.container {
+    position: relative;
+    z-index: 0;
+    height: 85vh;
+    width: 85vw;
+    margin-top: 5rem;
+    margin-bottom: 50rem;
+    /* padding: 2.5rem; */
+    background-color: rgba(0, 0, 0, 0.842);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+}
+
+/* .all-months{
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+
+.month-heading {
+    margin-top: 2.5rem;
+}
+.header-container {
+    position: sticky;
+    top: 1rem;
+    left: 35%;
+    
+    background-color: rgba(75, 236, 175, 0.295);
+    display: flex;
+    justify-content: center;
+    width: 20rem;
+    
+}
+
+.year-container {
+    width: 200px;
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.year {
+    position: absolute;
+    top: 0.2rem;
+    left: 60px;
+    color: white;
+}
+
+.left {
+    transform: translateX(-150px);
+    transition: transform linear 1.2s;
+}
+
+.right {
+    transform: translateX(150px);
+    transition: transform linear 1.2s;
+}
+
+.centre {
+    transform: translateX(0px);
+    transition: transform linear 1.2s;
+}
+
+.arrow {
+    font-weight: 1500;
+    color: rgba(255, 255, 255, 0.815);
+    cursor: pointer;
+}
+
+.arrow:hover {
+    color: rgb(158, 130, 150)
+}
+
+.hide{
+    display: none;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.pubhols{
+    background-color: rgba(75, 236, 175, 0.295);
+}
+
+.birth {
+    background-color: rgba(255, 217, 0, 0.377);
+}
+
+.all-months {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 85vh;
+    padding-left: 2rem;
+    
+    
+}
+
+@media screen and (max-width: 600px) {
+
+    .header-container {
+        position: sticky;
+        top: -2rem;
+        left: 15%;
+        
+        background-color: rgba(75, 236, 175, 0.295);
+        display: flex;
+        justify-content: center;
+        width: 17rem;
+        
+    }
+    
+}
+
+
+::-webkit-scrollbar {
+    width: 5px; 
+    border-radius: 2px; 
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #888; 
+    border-radius: 1.5px; 
+    cursor: pointer;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.774); 
+    border-radius: 2px; 
+    
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(45, 143, 107, 0.623);
+    
+  }
+  
+  
