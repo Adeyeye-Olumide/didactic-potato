@@ -7,7 +7,7 @@ body {
     display: flex;
     flex-direction: row;
     width: 125vw;
-    height: 230vh;
+    height: 200vh;
     
     justify-content: center;
     align-items: center;
@@ -196,8 +196,13 @@ body {
     width: 100vw;
     height: 85vh;
     padding-left: 2rem;
+    padding-right: 2rem;
     
     
+}
+
+.month {
+    padding: 6px;
 }
 
 @media screen and (max-width: 600px) {

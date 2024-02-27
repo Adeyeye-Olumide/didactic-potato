@@ -23,6 +23,7 @@ class CalendarView extends Calendar {
         this.renderviewHols()
         this.retrieveData()
         this.renderbox()
+        this.changeToCurrentYear()
         
         
     }
@@ -265,21 +266,38 @@ class CalendarView extends Calendar {
     clicker(){
         
         this._presentYear = this._headerContainer.querySelector(".centre")
+
+
+        
         this._headerContainer.addEventListener("click", (e)=> {
-            this._presentYear = this._headerContainer.querySelector(".centre")
-            let arrow = e.target.closest(".arrow")
+            this.clickerLogic(e.target.closest(".arrow"))
+
+            console.log(document.querySelectorAll('.arrow')[1], e.target.closest(".arrow"))
+            
+
+            
+        })
+
+       
+    }
+
+    clickerLogic(arrow = ''){
+
+        this._presentYear = this._headerContainer.querySelector(".centre")
+            // let arrow = e.target.closest(".arrow")
             this._selectedYear = document.createElement("h1")
 
             
             
-            console.log(this._presentYear)
+            console.log(this._presentYear, arrow)
             if (!arrow) return
 
             this._yearContainer.appendChild(this._selectedYear)
             if (arrow.classList.contains("front")){
+                console.log(arrow, 'hello')
                 this._selectedYear.textContent = +this._presentYear.textContent + 1
                 this.yearChangeFunc("left")
-                this.clearUi()
+                this.clearUi() 
                 if(this._selectedYear.textContent == "2023"){
                     return location.reload()
 
@@ -288,6 +306,8 @@ class CalendarView extends Calendar {
                 this.renderviewHols(this._selectedYear.textContent)
                 this.retrieveData()
                 this.renderbox()
+
+               
                
             }
 
@@ -295,7 +315,7 @@ class CalendarView extends Calendar {
                 this._selectedYear.textContent = +this._presentYear.textContent - 1
                 this.yearChangeFunc("right")
                 this.clearUi()
-                if(this._selectedYear.textContent == "2023"){
+                if(this._selectedYear.textContent == "2023" && this){
                     return location.reload()
 
                 }
@@ -310,10 +330,18 @@ class CalendarView extends Calendar {
                 //this.createMonth()
             }
 
-            
+            return +this._selectedYear.textContent
 
+
+    }
+
+    changeToCurrentYear(){
+        // if (+this._selectedYear.textContent < 2024) return
+        while (+this._presentYear.textContent  != new Date().getFullYear()) {
+
+            this._presentYear.textContent = this.clickerLogic(document.querySelectorAll('.arrow')[1])
             
-        })
+        }
     }
 
     
