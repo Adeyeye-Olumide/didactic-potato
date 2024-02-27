@@ -14,6 +14,7 @@ const calendarHols = new CalendarHols()
 class CalendarView extends Calendar {
     _boxElement = document.querySelector(".box")
     dateTarget
+    allDays 
 
     constructor(){
         super()
@@ -31,15 +32,17 @@ class CalendarView extends Calendar {
 
     async renderviewHols(year = "2023"){
         const data = await calendarHols.getHoliday(year)
-        const allDays = this._parentElement.querySelectorAll("td")
-        this.getData(data, allDays)
+        this.allDays = this._parentElement.querySelectorAll("td")
+
+        
+        this.getData(data)
 
         console.log(data)
     }
 
-    getData(data, allDays){
+    getData(data){
         
-        allDays.forEach((td,i)=> {
+        this.allDays.forEach((td,i)=> {
             td.setAttribute("data-value", "None")
             if(td.textContent && td.className){
                 let day = td.textContent.padStart(2,"0")
@@ -303,9 +306,9 @@ class CalendarView extends Calendar {
 
                 // }
                 this.createMonth()
-                this.renderviewHols(this._selectedYear.textContent)
-                this.retrieveData()
-                this.renderbox()
+                // this.renderviewHols(this._selectedYear.textContent)
+                // this.retrieveData()
+                // this.renderbox()
 
                
                
@@ -322,13 +325,15 @@ class CalendarView extends Calendar {
 
 
                 this.createMonth('next')
-                this.renderviewHols(this._selectedYear.textContent)
-                this.retrieveData()
-                this.renderbox()
                 
                 
                 //this.createMonth()
             }
+
+            this.renderviewHols(this._selectedYear.textContent)
+            this.retrieveData()
+            this.renderbox()
+                
 
             return +this._selectedYear.textContent
 

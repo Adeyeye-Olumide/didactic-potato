@@ -12,7 +12,7 @@ export class Calendar{
 
     
 
-    allDays = this._parentElement.querySelectorAll('td')
+    
     _presentYear
     _selectedYear
     filtered
