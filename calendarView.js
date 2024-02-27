@@ -298,10 +298,10 @@ class CalendarView extends Calendar {
                 this._selectedYear.textContent = +this._presentYear.textContent + 1
                 this.yearChangeFunc("left")
                 this.clearUi() 
-                if(this._selectedYear.textContent == "2023"){
-                    return location.reload()
+                // if(this._selectedYear.textContent == "2023"){
+                //     return location.reload()
 
-                }
+                // }
                 this.createMonth()
                 this.renderviewHols(this._selectedYear.textContent)
                 this.retrieveData()
@@ -315,10 +315,10 @@ class CalendarView extends Calendar {
                 this._selectedYear.textContent = +this._presentYear.textContent - 1
                 this.yearChangeFunc("right")
                 this.clearUi()
-                if(this._selectedYear.textContent == "2023" && this){
-                    return location.reload()
+                // if(this._selectedYear.textContent == "2023" && this){
+                //     return location.reload()
 
-                }
+                // }
 
 
                 this.createMonth('next')
@@ -358,20 +358,30 @@ class CalendarView extends Calendar {
         let months
         !className? months = this.months: months = [...this.months].reverse()
         months.forEach(month=> {
-            if(month == "January"&& !this._selectedYear) return
+            // if(month == "January"&& !this._selectedYear) return
 
             //else this._parentElement.innerHTML = '
-            if(month != "January" || +this._selectedYear.textContent != 2023){
-                console.log(this._selectedYear?.textContent)
-                let str
+            // if(month != "January" || +this._selectedYear.textContent != 2023){
+            //     console.log(this._selectedYear?.textContent)
+            //     let str
 
-                !className? str = "beforeend": str = "afterbegin"
+            //     !className? str = "beforeend": str = "afterbegin"
 
-                this._monthContainer.insertAdjacentHTML(str, this.returnMarkup(month))
+            //     this._monthContainer.insertAdjacentHTML(str, this.returnMarkup(month))
 
-                !className? this.fillMonthNextYear(month): this.fillMonthPrevYear(month, months)
-                this.deleteMarkup()
-            }
+            //     !className? this.fillMonthNextYear(month): this.fillMonthPrevYear(month, months)
+            //     this.deleteMarkup()
+            // }
+
+
+            let str
+
+            !className? str = "beforeend": str = "afterbegin"
+
+            this._monthContainer.insertAdjacentHTML(str, this.returnMarkup(month))
+
+            !className? this.fillMonthNextYear(month): this.fillMonthPrevYear(month, months)
+            this.deleteMarkup()
             
             
             
