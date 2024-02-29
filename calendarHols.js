@@ -1,4 +1,7 @@
 import { Calendar } from "./calandar.js"
+
+
+
 const api_key = "151e7e7b6f7149f981a236ba08116287"
 
 
@@ -26,7 +29,7 @@ export class CalendarHols extends Calendar{
 
             
 
-            const request1 = await fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=${api_key}`)
+            const request1 = await fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=${api_key}`)
             if(!request1.ok) throw new Error("Connection not established")
             const response = await request1.json()
             
