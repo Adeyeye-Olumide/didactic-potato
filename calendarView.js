@@ -4,7 +4,33 @@ import { CalendarHols } from './calendarHols.js'
 
 
 
+function getData(data){
+    
+    this.allDays.forEach((td,i)=> {
+        td.setAttribute("data-value", "None")
+        if(td.textContent && td.className){
+            let day = td.textContent.padStart(2,"0")
 
+            let year = this._selectedYear?
+            this._selectedYear.textContent: this._presentYear.textContent
+
+            let monthIndex = this.months.indexOf(td.closest(".month")
+            .previousElementSibling.textContent)+1
+
+            
+
+            let dateFormat = `${year}-${monthIndex.toString().padStart(2,"0")}-${day}`
+
+            data.forEach(holiday=>{
+                if(holiday.date== dateFormat){
+                    td.dataset.value = holiday.name
+                    td.classList.add("pubhols")
+                }
+            })
+        }
+    })
+
+}
 
 
 
@@ -31,43 +57,18 @@ class CalendarView extends Calendar {
 
 
     async renderviewHols(year = "2023"){
-        const data = await calendarHols.getHoliday(year)
-        this.allDays = this._parentElement.querySelectorAll("td")
-
         
-        this.getData(data)
 
-        console.log(data)
+        this.allDays = this._parentElement.querySelectorAll('td')
+        calendarHols.getHoliday(year, getData.bind(this))
+
+       
+    
+
+       
     }
 
-    getData(data){
-        
-        this.allDays.forEach((td,i)=> {
-            td.setAttribute("data-value", "None")
-            if(td.textContent && td.className){
-                let day = td.textContent.padStart(2,"0")
-
-                let year = this._selectedYear?
-                this._selectedYear.textContent: this._presentYear.textContent
-
-                let monthIndex = this.months.indexOf(td.closest(".month")
-                .previousElementSibling.textContent)+1
-
-                
-
-                let dateFormat = `${year}-${monthIndex.toString().padStart(2,"0")}-${day}`
-
-                data.forEach(holiday=>{
-                    if(holiday.date== dateFormat){
-                        td.dataset.value = holiday.name
-                        td.classList.add("pubhols")
-                    }
-                })
-            }
-        })
-
-    }
-
+   
     renderbox(){
         this._parentElement.addEventListener("click", e=> {
 
