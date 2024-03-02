@@ -14,7 +14,8 @@ body {
     overflow: hidden;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.897);
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    user-select: none
     
 }
 .box{
